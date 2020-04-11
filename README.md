@@ -1,4 +1,4 @@
-### Exercícios Módulo 01 - Introdução JavaScript
+####Exercícios Módulo 01 - Introdução JavaScript
 
 ## [1º exercício](https://github.com/guilhermeasena32/javascript-rocketseat/blob/master/modulo%201/exercicio1.html)
 
@@ -58,12 +58,12 @@ Dado o seguinte vetor de objetos:
 ```javascript
 var usuarios = [
 	 {
-	 nome: "Diego",
-	 habilidades: ["Javascript", "ReactJS", "Redux"]
+		 nome: "Diego",
+		 habilidades: ["Javascript", "ReactJS", "Redux"]
 	 },
 	 {
-	 nome: "Gabriel",
-	 habilidades: ["VueJS", "Ruby on Rails", "Elixir"]
+		 nome: "Gabriel",
+		 habilidades: ["VueJS", "Ruby on Rails", "Elixir"]
 	 }
 ];
 ```

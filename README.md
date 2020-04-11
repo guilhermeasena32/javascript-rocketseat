@@ -1,4 +1,4 @@
-####Exercícios Módulo 01 - Introdução JavaScript
+### Exercícios Módulo 01 - Introdução JavaScript
 
 ## [1º exercício](https://github.com/guilhermeasena32/javascript-rocketseat/blob/master/modulo%201/exercicio1.html)
 

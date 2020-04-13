@@ -1,4 +1,4 @@
-###Exercícios Módulo 04 - JS assíncrono
+### Exercícios Módulo 04 - JS assíncrono
 
 ## [1º exercício](https://github.com/guilhermeasena32/javascript-rocketseat/blob/master/modulo%204/exercicio1.html)
 

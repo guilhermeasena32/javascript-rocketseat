@@ -31,10 +31,10 @@ A partir do seguinte vetor:
 var nomes = ["Diego", "Gabriel", "Lucas"];
 ```
 
-Preencha uma lista (<ul>) no HTML com os itens da seguinte forma:
-● Diego
-● Gabriel
-● Lucas
+Preencha uma lista ```<ul>``` no HTML com os itens da seguinte forma:
+* Diego
+* Gabriel
+* Lucas
 
 ## [4º exercício](https://github.com/guilhermeasena32/javascript-rocketseat/blob/master/modulo%202/exercicio4.html)
 

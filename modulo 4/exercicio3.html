@@ -1,0 +1,67 @@
+<html>
+  <head>
+    <title>Curso Javascript</title>
+  </head>
+  <body>
+    <div id="app">
+      <input type="text" name="user" />
+      <button onclick="">Buscar</button>
+      <ul></ul>
+    </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+      var inputElement = document.querySelector("#app input");
+      var buttonElement = document.querySelector("#app button");
+      var listElement = document.querySelector("#app ul");
+
+      buttonElement.onclick = getRepo;
+
+      function getRepo() {
+        loading();
+        setTimeout(() => {
+          axios
+            .get(`https://api.github.com/users/${inputElement.value}/repos`)
+            .then(function (response) {
+              addRepo(response.data);
+            })
+            .catch(function (err) {
+              error();
+            });
+        }, 1000);
+      }
+
+      function loading() {
+        listElement.innerHTML = "";
+        var loading = document.createElement("li");
+        var text = document.createTextNode("Carregando...");
+        loading.appendChild(text);
+        listElement.appendChild(loading);
+      }
+
+      function addRepo(response) {
+        listElement.innerHTML = "";
+        for (repo of response) {
+          var itemElement = document.createElement("li");
+          var textItem = document.createTextNode(
+            `${repo.name} 
+                  (${
+                    repo.description != null
+                      ? repo.description
+                      : "Sem descrição"
+                  })`
+          );
+          itemElement.appendChild(textItem);
+          listElement.appendChild(itemElement);
+        }
+      }
+
+      function error() {
+        listElement.innerHTML = "";
+        var error = document.createElement("li");
+        var text = document.createTextNode("Usuário não existe");
+        error.appendChild(text);
+        listElement.appendChild(error);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,44 @@
+<html>
+  <head>
+    <title>Curso Javascript</title>
+  </head>
+  <body>
+    <div id="app">
+      <input type="text" name="user" />
+      <button onclick="">Buscar</button>
+      <ul></ul>
+    </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+      var buttonElement = document.querySelector("#app button");
+      buttonElement.onclick = getRepo;
+
+      function getRepo() {
+        var inputElement = document.querySelector("#app input");
+        var listElement = document.querySelector("#app ul");
+
+          axios
+            .get(`https://api.github.com/users/${inputElement.value}/repos`)
+            .then(function (response) {
+              // loading.remove();
+              listElement.innerHTML = "";
+              for (repo of response.data) {
+                var itemElement = document.createElement("li");
+                var textItem = document.createTextNode(
+                  `${repo.name} 
+                  (${
+                    repo.description != null
+                      ? repo.description
+                      : "Sem descrição"
+                  })`
+                );
+                itemElement.appendChild(textItem);
+                listElement.appendChild(itemElement);
+              }
+              console.log(response.data);
+            })
+            .catch(function (error) {});
+      }
+    </script>
+  </body>
+</html>
